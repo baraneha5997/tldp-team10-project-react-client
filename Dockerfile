@@ -6,5 +6,5 @@ RUN npm run build
 
 FROM nginx:stable-alpine
 COPY --from=build /app/build/ /usr/share/nginx/html
-COPY --from=build /app/default.conf /etc/nginx/http.d/default.conf
+COPY --from=build /app/default.conf /etc/nginx/templates/default.conf.template
 EXPOSE 80
